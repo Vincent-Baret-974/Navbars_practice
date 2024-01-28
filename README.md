@@ -1,16 +1,6 @@
 # navbars_practicing
 
-A new Flutter project.
+In this repository I'm working on improving my skills with creating custom Flutter naigation bars. 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Centered notch app bar
+<img width="428" alt="Capture d’écran 2024-01-28 à 18 06 35" src="https://github.com/Vincent-Baret-974/Navbars_practice/assets/133604447/c7fc03e3-ac45-4a15-9c04-16fc9ac58c9b">
