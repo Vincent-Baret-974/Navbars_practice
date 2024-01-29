@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navbars_practicing/appbars/AnimatedAppBar.dart';
 
 import 'appbars/CenteredNotchAppBar.dart';
 
@@ -29,21 +30,32 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: SizedBox(
-        height: 120,
-        width: 80,
-        child: FloatingActionButton(
-          shape: const CircleBorder(),
-          backgroundColor: dYellow,
-          onPressed: () {},
-          child: const Icon(
-              Icons.qr_code_scanner_outlined,
-              size: 35,
-          ),
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      //floatingActionButton: FloatingButtonNotchAppBar(),
+      bottomNavigationBar: AnimatedAppBar(),
+    );
+  }
+}
+
+class FloatingButtonNotchAppBar extends StatelessWidget {
+  const FloatingButtonNotchAppBar({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 120,
+      width: 80,
+      child: FloatingActionButton(
+        shape: const CircleBorder(),
+        backgroundColor: dYellow,
+        onPressed: () {},
+        child: const Icon(
+            Icons.qr_code_scanner_outlined,
+            size: 35,
         ),
       ),
-      bottomNavigationBar: const CenteredNotchAppBar(),
     );
   }
 }
