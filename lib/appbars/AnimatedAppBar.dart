@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
-class AnimatedAppBar extends StatelessWidget {
+class AnimatedAppBar extends StatefulWidget {
+  const AnimatedAppBar({super.key});
+
+  @override
+  State<AnimatedAppBar> createState() => _AnimatedAppBarState();
+}
+
+class _AnimatedAppBarState extends State<AnimatedAppBar> {
   bool visible = true;
+
   bool visibleSearch = false;
+  String selectedIcon = "home";
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +22,10 @@ class AnimatedAppBar extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-                color: visible ? Colors.purple : null,
+                color: selectedIcon == "home" ? Colors.purple : null,
                 borderRadius: BorderRadius.circular(25)
             ),
-            padding: visible ? const EdgeInsets.only(right: 20) : null,
+            padding: selectedIcon == "home" ? const EdgeInsets.only(right: 20) : null,
             child: Row(
               children: [
                 IconButton(
@@ -25,9 +34,13 @@ class AnimatedAppBar extends StatelessWidget {
                       color: Colors.white,
                     ),
                     highlightColor: Colors.transparent,
-                    onPressed: () {}),
+                    onPressed: () {
+                      setState(() {
+                        selectedIcon = "home";
+                      });
+                    }),
                 Visibility(
-                  visible: visible,
+                  visible: selectedIcon == "home",
                   child: const Text(
                     'Home',
                     style: TextStyle(color: Colors.white),
@@ -38,10 +51,10 @@ class AnimatedAppBar extends StatelessWidget {
           ),
           Container(
             decoration: BoxDecoration(
-                color: visibleSearch ? Colors.purple : null,
+                color: selectedIcon == "search" ? Colors.purple : null,
                 borderRadius: BorderRadius.circular(25)
             ),
-            padding: visibleSearch ? const EdgeInsets.only(right: 20) : null,
+            padding: selectedIcon == "search" ? const EdgeInsets.only(right: 20) : null,
             child: Row(
               children: [
                 IconButton(
@@ -49,9 +62,14 @@ class AnimatedAppBar extends StatelessWidget {
                       Icons.search_rounded,
                       color: Colors.white,
                     ),
-                    onPressed: () {}),
+                    highlightColor: Colors.transparent,
+                    onPressed: () {
+                      setState(() {
+                        selectedIcon = "search";
+                      });
+                    }),
                 Visibility(
-                  visible: visibleSearch,
+                  visible: selectedIcon == "search",
                   child: const Text(
                     'Search',
                     style: TextStyle(color: Colors.white),
@@ -62,28 +80,91 @@ class AnimatedAppBar extends StatelessWidget {
 
           ),
           Container(
-            child: IconButton(
-                icon: const Icon(
-                  Icons.pie_chart,
-                  color: Colors.white,
-                ),
-                onPressed: () {}),
+            decoration: BoxDecoration(
+                color: selectedIcon == "stats" ? Colors.purple : null,
+                borderRadius: BorderRadius.circular(25)
+            ),
+            padding: selectedIcon == "stats" ? const EdgeInsets.only(right: 20) : null,
+            child: Row(
+              children: [
+                IconButton(
+                    icon: const Icon(
+                      Icons.pie_chart,
+                      color: Colors.white,
+                    ),
+                    highlightColor: Colors.transparent,
+                    onPressed: () {
+                      setState(() {
+                        selectedIcon = "stats";
+                      });
+                    }),
+                Visibility(
+                  visible: selectedIcon == "stats",
+                  child: const Text(
+                    'Stats',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
           ),
           Container(
-            child: IconButton(
-                icon: const Icon(
-                  Icons.access_time_outlined,
-                  color: Colors.white,
-                ),
-                onPressed: () {}),
+            decoration: BoxDecoration(
+                color: selectedIcon == "history" ? Colors.purple : null,
+                borderRadius: BorderRadius.circular(25)
+            ),
+            padding: selectedIcon == "history" ? const EdgeInsets.only(right: 20) : null,
+            child: Row(
+              children: [
+                IconButton(
+                    icon: const Icon(
+                      Icons.access_time_outlined,
+                      color: Colors.white,
+                    ),
+                    highlightColor: Colors.transparent,
+                    onPressed: () {
+                      setState(() {
+                        selectedIcon = "history";
+                      });
+                    }),
+                Visibility(
+                  visible: selectedIcon == "history",
+                  child: const Text(
+                    'History',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
           ),
           Container(
-            child: IconButton(
-                icon: const Icon(
-                  Icons.person_outline_rounded,
-                  color: Colors.white,
-                ),
-                onPressed: () {}),
+            decoration: BoxDecoration(
+                color: selectedIcon == "profile" ? Colors.purple : null,
+                borderRadius: BorderRadius.circular(25)
+            ),
+            padding: selectedIcon == "profile" ? const EdgeInsets.only(right: 20) : null,
+            child: Row(
+              children: [
+                IconButton(
+                    icon: const Icon(
+                      Icons.person_outline_rounded,
+                      color: Colors.white,
+                    ),
+                    highlightColor: Colors.transparent,
+                    onPressed: () {
+                      setState(() {
+                        selectedIcon = "profile";
+                      });
+                    }),
+                Visibility(
+                  visible: selectedIcon == "profile",
+                  child: const Text(
+                    'Profile',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                )
+              ],
+            ),
           ),
         ],
       ),
