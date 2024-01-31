@@ -20,12 +20,13 @@ class _AnimatedAppBarState extends State<AnimatedAppBar> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
+          AnimatedContainer(
             decoration: BoxDecoration(
                 color: selectedIcon == "home" ? Colors.purple : null,
                 borderRadius: BorderRadius.circular(25)
             ),
             padding: selectedIcon == "home" ? const EdgeInsets.only(right: 20) : null,
+            duration: const Duration(milliseconds: 300),
             child: Row(
               children: [
                 IconButton(
@@ -49,12 +50,13 @@ class _AnimatedAppBarState extends State<AnimatedAppBar> {
               ],
             ),
           ),
-          Container(
+          AnimatedContainer(
             decoration: BoxDecoration(
                 color: selectedIcon == "search" ? Colors.purple : null,
                 borderRadius: BorderRadius.circular(25)
             ),
             padding: selectedIcon == "search" ? const EdgeInsets.only(right: 20) : null,
+            duration: const Duration(milliseconds: 300),
             child: Row(
               children: [
                 IconButton(
@@ -79,12 +81,13 @@ class _AnimatedAppBarState extends State<AnimatedAppBar> {
             ),
 
           ),
-          Container(
+          AnimatedContainer(
             decoration: BoxDecoration(
                 color: selectedIcon == "stats" ? Colors.purple : null,
                 borderRadius: BorderRadius.circular(25)
             ),
             padding: selectedIcon == "stats" ? const EdgeInsets.only(right: 20) : null,
+            duration: const Duration(milliseconds: 300),
             child: Row(
               children: [
                 IconButton(
@@ -108,12 +111,13 @@ class _AnimatedAppBarState extends State<AnimatedAppBar> {
               ],
             ),
           ),
-          Container(
+          AnimatedContainer(
             decoration: BoxDecoration(
                 color: selectedIcon == "history" ? Colors.purple : null,
                 borderRadius: BorderRadius.circular(25)
             ),
             padding: selectedIcon == "history" ? const EdgeInsets.only(right: 20) : null,
+            duration: const Duration(milliseconds: 300),
             child: Row(
               children: [
                 IconButton(
@@ -137,12 +141,13 @@ class _AnimatedAppBarState extends State<AnimatedAppBar> {
               ],
             ),
           ),
-          Container(
+          AnimatedContainer(
             decoration: BoxDecoration(
                 color: selectedIcon == "profile" ? Colors.purple : null,
                 borderRadius: BorderRadius.circular(25)
             ),
             padding: selectedIcon == "profile" ? const EdgeInsets.only(right: 20) : null,
+            duration: const Duration(milliseconds: 300),
             child: Row(
               children: [
                 IconButton(
